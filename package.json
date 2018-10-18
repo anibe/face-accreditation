@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next -p 1960",
     "build": "next build",
-    "start": "next build && next start",
+    "start": "next build && next start -p $PORT",
     "export": "next export"
   },
   "dependencies": {
