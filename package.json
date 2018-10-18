@@ -1,0 +1,30 @@
+{
+  "name": "face-accreditation",
+  "version": "0.1.0",
+  "description": "AI Powered voter accreditation for elections and polls",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next -p 1960",
+    "build": "next build",
+    "start": "next build && next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^7.0.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anibe/face-accreditation.git"
+  },
+  "author": "Anibe Agamah",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/anibe/face-accreditation/issues"
+  },
+  "homepage": "https://github.com/anibe/face-accreditation#readme",
+  "engines": {
+    "node": ">=6"
+  }
+}
