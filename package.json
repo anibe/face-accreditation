@@ -11,6 +11,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@google-cloud/datastore": "^2.0.0",
     "next": "^7.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
@@ -27,5 +28,10 @@
   "homepage": "https://github.com/anibe/face-accreditation#readme",
   "engines": {
     "node": ">=6"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3"
   }
 }
