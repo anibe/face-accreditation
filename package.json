@@ -40,8 +40,5 @@
   "bugs": {
     "url": "https://github.com/anibe/face-accreditation/issues"
   },
-  "homepage": "https://github.com/anibe/face-accreditation#readme",
-  "engines": {
-    "node": ">=6"
-  }
+  "homepage": "https://github.com/anibe/face-accreditation#readme"
 }
