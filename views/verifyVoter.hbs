@@ -1,0 +1,38 @@
+{{!-- <h1>{{title}}</h1> --}}
+<form method="POST" id="scan-form" enctype="multipart/form-data">
+    <div id="capture-window">
+        <h3>Capture Voter</h3>
+        <p>Use the button below to start a face capture of a voter</p>
+        <input name="voter-image" id="voter-image" type="file" accept="image/*" capture="environment">
+        <label class="voter-image-label" for="voter-image">&nbsp;</label>
+        <button class="waves-effect waves-light btn">Scan voter</button>
+    </div>    
+    <hr/>
+    <div id="voter-register">
+        <h3>Voters Register</h3>
+        <p>List of registered voters</p>
+        <ul>
+            <li>
+                <input checked="checked" name="reg-voter-bio" type="radio" value="000;No Voter found;0;Male" />
+            </li>
+            {{#each voters}}
+            <li>
+                <label class="voter">                  
+                <input name="reg-voter-bio" type="radio" value="{{id}};{{fullname}};{{age}};{{gender}}" />
+                {{!-- <input name="reg-voter-fullname" type="hidden" value="{{fullname}}" />
+                <input name="reg-voter-age" type="hidden" value="{{age}}" /> --}}
+                <div>{{fullname}}</div>
+                <img width="48" height="48" src="/images/registered-voters/{{id}}.jpeg"/>
+                </label>
+            </li>
+            {{/each}}
+        </ul>        
+    </div>    
+</form>
+  <script>
+    var scanForm = document.querySelector('#scan-form');
+
+    scanForm.addEventListener('submit', () => {
+      document.body.classList.add('is-loading');
+    });
+  </script>

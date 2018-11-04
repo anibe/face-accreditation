@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<ul>
+    {{#each voters}}
+        <li class="voter">
+            <div>{{fullname}}</div>
+            <img width="32" height="32" src="/images/registered-voters/{{id}}.jpeg"/>
+        </li>
+    {{/each}}
+</ul>

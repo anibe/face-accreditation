@@ -1,0 +1,73 @@
+<h1>Verification Results</h1>
+
+{{#if results.canVerify }}
+{{!-- <span class="grey-text">Face ID Successful</span> --}}
+{{else}}
+<span class="grey-text">Could not identify a human face</span>
+{{/if}}
+<div class="result-window">
+    <div>
+        {{#if results.isVerified }}
+        <span class="success">VOTER SUCCESSFULLY VERIFIED</span>
+        <br/>
+        <br/>
+        {{results.confidence }} confidence
+        {{else}}
+        <span class="fail">VOTER NOT RECOGNISED</span><br/>
+        Refer voter to presiding officer for investigation
+        {{/if}}
+    </div>
+    <div class="images">
+        {{#if results.isVerified }}
+        <div>
+            <h4>Registered Voter</h4>
+            <div>
+                <img src="/images/registered-voters/{{results.registeredVoter.vin}}.jpeg" />
+            </div>
+            <div>
+                <ul>
+                    <li><span class="grey-text">VIN:</span> {{ results.registeredVoter.vin }}</li>
+                    <li><strong><span class="grey-text">Fullname: </span> {{ results.registeredVoter.fullname }}</strong></li>
+                    <li><span class="grey-text">Age:</span> {{ results.registeredVoter.age }}</li>
+                    <li><span class="grey-text">Gender:</span> {{ results.registeredVoter.gender }}</li>
+                    <li><span class="grey-text">Voter status:</span> <span class="green-text">Has not voted</span> <!-- <span class="red-text">Voted at PU 2812/U/LAG</span> --></li>
+                    {{!-- <li><span class="grey-text">Voting status:</span> {{ results.registeredVoter.gender }}</li> --}}
+                </ul>
+            </div>
+        </div>
+        {{/if}}
+        <div>
+            <h4>Scanned Person</h4>
+            <div>
+                <img src="data:image/jpeg;base64,{{results.scannedPerson.imgBuffer}}" id="scanned-image" />
+            </div>
+            <div>
+                <ul>
+                    <li><span class="grey-text">Estimated age:</span> {{ results.scannedPerson.age }}</li>
+                    <li><span class="grey-text">Estimated gender:</span> {{ results.scannedPerson.gender }}</li>
+                    <li><span class="grey-text">Features:</span>
+                        <ul>
+                            <li>{{#if results.scannedPerson.hasGlasses }}👓 Glasses{{/if}}</li>
+                            <li>{{#if results.scannedPerson.facialHair }}💈 Facial hair{{/if}}</li>
+                            <li>{{#if results.scannedPerson.makeup }}💋 Makeup{{/if}}</li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{#if results.isVerified }}
+    <div>
+        <h3>🤖 Analysis</h3>
+        <p class="grey-text">The information provided is this section should only act as a guide to the presiding officers who reserve the right to the final decision on issuance of ballot documents.</p>
+        <div>
+            <ul>
+                <li>Age variation: {{#if results.ageVariationAcceptable }}<span class="green-text">Acceptable</span>{{else}}<span class="red-text">Proof of DOB recommended</span>{{/if}} (±{{ results.ageVariation }} years)</li>
+                <li>{{#if results.appearsUnderAged }}Appears age eligible (18+)</li>{{else}}<span class="red-text">Appears under-aged</span>{{/if}}</li>
+                <li>Gender match: Yes</li>
+                {{!-- <li>Distress signals (Fear Factor): {{ results.scannedPerson.fearFactor }}</li> --}}
+            </ul>
+        </div>
+    </div>
+    {{/if}}
+</div>
