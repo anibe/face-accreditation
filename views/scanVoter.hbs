@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<p>Use the app to Face ID registered voters</p>
+<form method="POST" enctype="multipart/form-data">
+    <h3>Capture Voter</h3>
+    <input name="voter-image" id="voter-image" type="file" accept="image/*" capture="environment">
+    <button>S C A N</button>
+</form>
+<script>
+  {{!-- const fileInput = document.querySelector('#voter-image');
+  const voters = document.querySelectorAll('.voter');
+
+  fileInput.addEventListener('change', (e) => console.log(e.target.files)); --}}
+</script>
