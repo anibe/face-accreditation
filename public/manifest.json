@@ -1,0 +1,15 @@
+{
+    "name": "Face Accreditation",
+    "short_name": "📸FaceValidate",
+    "display": "minimal-ui",
+    "start_url": "/",
+    "theme_color": "#235c1a",
+    "background_color": "#ffffff",
+    "icons": [
+      {
+        "src": "app-icon.png",
+        "sizes": "349x349",
+        "type": "image/png"
+      }
+    ]
+  }
