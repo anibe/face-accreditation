@@ -24,4 +24,10 @@
     Computing...
   </div>
   </body>
+  <script>
+      navigator.serviceWorker && navigator.serviceWorker.register('/javascripts/sw.js').then(function (registration) {
+        console.log('Excellent, registered with scope: ', registration.scope);
+
+      });
+  </script>
 </html>
