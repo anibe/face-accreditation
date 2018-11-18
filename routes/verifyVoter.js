@@ -33,6 +33,8 @@ router.get('/', function (req, res, next) {
             voterList.push({ fullname: voter['Full name'], id: voter.VIN, age: calcAge(voter.DOB), gender: (voter.Gender === 'F') ? 'Female': 'Male' });
         });
         res.render('verifyVoter', { title: 'Verify Voter', voters: voterList });
+    }).catch((err) => {
+        res.render('error', err);
     });    
 });
 
